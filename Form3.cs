@@ -37,7 +37,7 @@ namespace Reserva_de_Vuelos
         {
 
             var Factura = (Factura)listadeFacturasBindingSource.Current;
-            Factura.CalcularTotalFactura();
+            Factura.CalcularTotalFactura(Factura);
 
             listadeFacturasBindingSource.ResetBindings(false);
         }

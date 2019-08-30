@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label aerolineaLabel;
             System.Windows.Forms.Label claseLabel;
             System.Windows.Forms.Label precioLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.Label aerolineaLabel1;
             this.listaVueloBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.listaVueloBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -47,7 +47,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.listaVueloBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.aerolineaTextBox = new System.Windows.Forms.TextBox();
             this.claseTextBox = new System.Windows.Forms.TextBox();
             this.precioTextBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -60,9 +59,10 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            aerolineaLabel = new System.Windows.Forms.Label();
+            this.aerolineaTextBox = new System.Windows.Forms.TextBox();
             claseLabel = new System.Windows.Forms.Label();
             precioLabel = new System.Windows.Forms.Label();
+            aerolineaLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaVueloBindingNavigator)).BeginInit();
             this.listaVueloBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaVueloBindingSource)).BeginInit();
@@ -71,15 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaVueloBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaVueloDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // aerolineaLabel
-            // 
-            aerolineaLabel.AutoSize = true;
-            aerolineaLabel.Location = new System.Drawing.Point(307, 76);
-            aerolineaLabel.Name = "aerolineaLabel";
-            aerolineaLabel.Size = new System.Drawing.Size(54, 13);
-            aerolineaLabel.TabIndex = 1;
-            aerolineaLabel.Text = "Aerolinea:";
             // 
             // claseLabel
             // 
@@ -230,14 +221,6 @@
             this.listaVueloBindingNavigatorSaveItem.Text = "Guardar datos";
             this.listaVueloBindingNavigatorSaveItem.Click += new System.EventHandler(this.listaVueloBindingNavigatorSaveItem_Click);
             // 
-            // aerolineaTextBox
-            // 
-            this.aerolineaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaVueloBindingSource, "Aerolinea", true));
-            this.aerolineaTextBox.Location = new System.Drawing.Point(380, 73);
-            this.aerolineaTextBox.Name = "aerolineaTextBox";
-            this.aerolineaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.aerolineaTextBox.TabIndex = 2;
-            // 
             // claseTextBox
             // 
             this.claseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaVueloBindingSource, "Clase", true));
@@ -306,9 +289,9 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn5});
             this.listaVueloDataGridView.DataSource = this.listaVueloBindingSource1;
-            this.listaVueloDataGridView.Location = new System.Drawing.Point(112, 172);
+            this.listaVueloDataGridView.Location = new System.Drawing.Point(8, 166);
             this.listaVueloDataGridView.Name = "listaVueloDataGridView";
-            this.listaVueloDataGridView.Size = new System.Drawing.Size(339, 220);
+            this.listaVueloDataGridView.Size = new System.Drawing.Size(353, 220);
             this.listaVueloDataGridView.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn1
@@ -329,18 +312,35 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Clase";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
+            // aerolineaLabel1
+            // 
+            aerolineaLabel1.AutoSize = true;
+            aerolineaLabel1.Location = new System.Drawing.Point(307, 76);
+            aerolineaLabel1.Name = "aerolineaLabel1";
+            aerolineaLabel1.Size = new System.Drawing.Size(54, 13);
+            aerolineaLabel1.TabIndex = 11;
+            aerolineaLabel1.Text = "Aerolinea:";
+            // 
+            // aerolineaTextBox
+            // 
+            this.aerolineaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaVueloBindingSource1, "Aerolinea", true));
+            this.aerolineaTextBox.Location = new System.Drawing.Point(380, 73);
+            this.aerolineaTextBox.Name = "aerolineaTextBox";
+            this.aerolineaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.aerolineaTextBox.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(581, 476);
+            this.Controls.Add(aerolineaLabel1);
+            this.Controls.Add(this.aerolineaTextBox);
             this.Controls.Add(this.listaVueloDataGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(aerolineaLabel);
-            this.Controls.Add(this.aerolineaTextBox);
             this.Controls.Add(claseLabel);
             this.Controls.Add(this.claseTextBox);
             this.Controls.Add(precioLabel);
@@ -378,7 +378,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton listaVueloBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox aerolineaTextBox;
         private System.Windows.Forms.TextBox claseTextBox;
         private System.Windows.Forms.TextBox precioTextBox;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -391,6 +390,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.TextBox aerolineaTextBox;
     }
 }
 

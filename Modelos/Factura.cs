@@ -29,19 +29,21 @@ namespace Reserva_de_Vuelos.Modelos
             FacturaDetalle = new BindingList<FacturaDetalle>();
         
         }
-        public void CalcularTotalFactura()
+        public void CalcularTotalFactura(Factura factura)
         {
             var BusquedadeVueloBL  = new BusquedaVueloBL();
 
-            double subtotal = 0;
-            foreach (var detalle in FacturaDetalle)
+            double Subtotal = 0;
+            foreach (var detalle in factura.FacturaDetalle)
             {
                 var precio = BusquedadeVueloBL.ObtenerPrecio(detalle.BusquedaVueloId);
-                subtotal = subtotal + detalle.CalcularTotalDetalle(precio);
+                Subtotal = Subtotal + detalle.CalcularTotalDetalle(precio);
+
+                Subtotal += detalle.Total; 
             }
-            subtotal = subtotal;
-            Impuesto = subtotal * 0.15;
-            Total = subtotal + Impuesto;
+            factura.Subtotal = Subtotal;
+            factura.Impuesto = Subtotal * 0.15;
+           factura.Total = Subtotal + Impuesto;
         }
 
     }
@@ -49,8 +51,6 @@ namespace Reserva_de_Vuelos.Modelos
     {
         public int Id { get; set; }
         public BusquedaVuelo  BusquedadeVuelo { get; set; }
-
-
         public int Cantidad { get; set; }
         public double Precio { get; set; }
         public double Total { get; set; }
